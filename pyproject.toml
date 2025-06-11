@@ -1,0 +1,11 @@
+[project]
+name = "ascii-server"
+version = "0.1.0"
+description = "MCP Server for creating ascii art"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=1.9.2",
+    "pillow>=11.2.1",
+    "pyfiglet>=1.0.3",
+]
