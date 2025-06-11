@@ -8,3 +8,14 @@ wheels/
 
 # Virtual environments
 .venv
+
+#Any markdown files and text files
+*.md
+*.txt
+
+#Any images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
