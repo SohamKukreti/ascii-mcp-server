@@ -53,5 +53,28 @@ def image_to_ascii(image_path: str, width: int = 100) -> str:
     except Exception as e:
         return f"Error converting image: {str(e)}"
 
+@mcp.tool()
+def export_ascii_art(text: str, ascii_art: str, format: str = "txt") -> str:
+    """Export ASCII art in different formats (txt, html, markdown)."""
+    try:
+        if format == "txt":
+            with open(f"{text}.txt", "w") as f:
+                f.write(ascii_art)
+            return "Saved as TXT"
+        elif format == "html":
+            html_content = f"<pre>{ascii_art}</pre>"
+            with open(f"{text}.html", "w") as f:
+                f.write(html_content)
+            return "Saved as HTML"
+        elif format == "md":
+            md_content = f"```\n{ascii_art}\n```"
+            with open(f"{text}.md", "w") as f:
+                f.write(md_content)
+            return "Saved as Markdown"
+        else:
+            return "Unsupported format"
+    except Exception as e:
+        return f"Error exporting: {str(e)}"
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")
